@@ -25,6 +25,8 @@ Let's suppose we are trading SPY, and we have three shares.
 
 We can create a series of stop market sell orders with stop prices below the current price, and our broker's servers will be automatically watching for you and will trigger the market sell order if the price of SPY drops down to there.
 
+<img 
+
 <br/>
 
 ## Why Are Stop Ladders Useful?
@@ -38,6 +40,8 @@ This technique allows traders to have peace of mind with a "worst case maximum l
 You're betting on a direction, and if you're wrong then these stop order will automatically cut your losses and you can just move on without having to make any difficult, emoptional decisions later on when you're down.
 
 <br/>
+
+Adjust
 
 If you're right
 
