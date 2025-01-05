@@ -12,7 +12,7 @@ I end up getting lazy and neglecting my positions because 1) I can't easily see 
 
 Anyway, the purpose of this tool was to make creating and adjusting ___my own___ stop orders super fast and easy, and I'm excited to share this platform with others too!
 
-To my knowledge, there is currently __NOT ONE SINGLE___ brokerage or trading platform that allows you to modify, for example shift up or down your stop orders by $2 or 2%, in a batch order. That means you have to go in manually to every single stop order, do the math, and replace it with a new order instead. 😕
+To my knowledge, there is currently ___NOT ONE SINGLE___ brokerage or trading platform that allows you to modify stops at a batch (for example, shiftig the trigger price of all stops up or down by $2 or 2%). That means you have to go in manually to every single stop order, do the math, and replace it with a new order instead. 😕
 
 <br/>
 
