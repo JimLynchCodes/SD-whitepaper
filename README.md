@@ -1,16 +1,16 @@
 # SD-whitepaper
 
-Early designs and ideas for the stop dropper tool.
+Early designs and ideas for the stop dropping trading tool.
 
 <br/>
 
 ## Why?
 
-I'm maing this tool for myself becuase I realized that I am spending a ton of time using my broker's clunky tools.
+I dreamed of making this tool for myself because I realized I spend a ton of time managing my stop orders using my broker's clunky existing tools.
 
-I'm not moving my stops up when I could because 1) I can't easily see these opportunities and 2) it's very cumbersome to make the changes I actually want to, so half the time I just don't simply because I burn out from exhaustion.  
+I end up getting lazy and neglecting my positions because 1) I can't easily see these opportunities and 2) it's very cumbersome to make the changes I actually want to, so half the time I just don't simply because I burn out from exhaustion.  
 
-Anyway, the purpose of this tool was to make creating and adjusting __my own___ stop orders super fast and easy, and I'm excited to share this platform for others to use as well.
+Anyway, the purpose of this tool was to make creating and adjusting ___my own___ stop orders super fast and easy, and I'm excited to share this platform with others too!
 
 <br/>
 
@@ -22,13 +22,13 @@ But before we get into all that, let's define some terms.
 
 <br>
 
-## A "Stop Ladder" Example
+## Let's Look At An Example
 
 Let's suppose we are trading SPY, and we have three shares.
 
-We can create a series of stop market sell orders with stop prices below the current price, and our broker's servers will be automatically watching for you and will trigger the market sell order if the price of SPY drops down to there.
+We can create a series of stop market sell orders with stop prices below the current price. Our broker's servers will automatically watch for you and trigger the market sell order if the price of SPY drops to that level.
 
-On a platform like ThinkOrSwim we can see our stop orders as little red bubbles overlayed on the price chart.
+On a platform like ThinkOrSwim, we can see our stop orders as little red bubbles overlayed on the price chart.
 
 <img src="./images/thinkorswim-stop-ladder-on-chart.png"/>
 
@@ -42,16 +42,31 @@ The idea is that as your profit goes down, the size of your position goes down, 
 
 This technique allows traders to have peace of mind with a "worst case maximum loss" much lower than the full investment.
 
-You're betting on a direction, and if you're wrong then these stop order will automatically cut your losses and you can just move on without having to make any difficult, emotional decisions later on when you're down.
+You're betting on a direction, and if you're wrong then the stop orders will automatically cut your losses. You can then move on without having to make any difficult, emotional decisions later down the road when you're down.
+
+I like to call it a _ladder_ because I like to imagine the stops placed a logical distance apart, like rungs of a ladder you can climb on...
+
+<img src="./images/stops-diagram-with-ladder.jpg">
 
 <br/>
 
 ## Dollar Cost Averaging _Out_ of a Postion
+The phrase "dollar cost averaging" is often used to refer to buying shares of a stock at lower prices, possibly by placing many limit buy orders at different prices below the current underlying price.
+
+The stop ladder can be thought of as a way of DCA-ing _out_ of a position because as the underlying moves against your direction then you sell off some more, little by little.
+
+These strategies help traders avoid unlucky timing. Since you don't know exactly how low it might go these many orders allow you to spread your purchases out over different prices so that you can't just "happen to time it badly" by placing on a big sell order.
 
 <br/>
 
 ## It Works For Shorting Too! 
+Yep, this style of trading works when shorting too!
 
+In margin accounts, you can _sell-to-open_ a position and then own negative shares.
+
+You then place a ladder of stop buy-to-close orders with trigger prices above the current underlying.
+
+We are careful to use the names _"closest and farthest to the underlying"_ so that it works for both long and short cases. 
 
 <br/>
 
@@ -69,17 +84,17 @@ Let's use the term ___weights___ to refer to how many shares are sold when each 
 
 ## Adjusting Your Stops
 
-Going in an adjusting your stops manually can be extremely tedious, and we made this platform exactly so you don't have to!
+Going in and adjusting your stops manually can be extremely tedious, and we made this platform exactly so you don't have to!
 
 If the underlying moves in your favor then the buffer becomes very large.
 
-At this point you may want to "lock in gains" by moving the trigger price of one or move stops close to the underlying.
+At this point, you may want to "lock in gains" by moving the trigger price of one or more stops close to the underlying.
 
 There are a few different ways you could modify your stop ladder.
 
 <br/>
 
-High level ways to edit a ladder:
+High-level ways to edit a ladder:
 
 1) The Ladder Shift
 2) The Ladder Stretch
@@ -104,7 +119,7 @@ And here is a more mobile friendly(?) version of this ui:
 <img src="./images/mobile-ui-v1.jpg"/>
 
 
-Now let's dive deeper into explaining each one each one.
+Now let's dive deeper into explaining each one.
 
 <br/>
 
@@ -117,12 +132,6 @@ Use this when you want to modify the size of the buffer while keeping the distan
 ### Controls 
 
 There are a few ways to shift the ladder:
-
-<!-- - Method 1) Drag the Closest Stop
-
-    Clicking and dragging the stop order closest to the underlying will automatically shift the other stops to maintain the same gap 1-2 as before, according your set gap algo.
-
-<br/> -->
 
 - Method 1) Set the Closest Stop Trigger Price
 
@@ -138,7 +147,7 @@ There are a few ways to shift the ladder:
 
 - Method 4 [Desktop only]) Hold SHIFT and drag a stop vertically
 
-    Holding shift allows you to tells the platform that you want to _shift_ the entire ladder, and not move an individual stop.
+    Holding shift allows you to tell the platform that you want to _shift_ the entire ladder, and not move an individual stop.
 
 <br/>
 
@@ -165,7 +174,7 @@ Or, on the flip side, if you want to "give the position more room to breathe" an
 
 - Method 1) Change Gap Size
 
-For fine tuning of the gap amount you can click on the dollar amount or percentage for the gaps in the properties panel. This will recalculate all of the gaps and stops in the ladder to fit the gap size.
+For fine tuning of the gap amount, you can click on the dollar amount or percentage for the gaps in the properties panel. This will recalculate all of the gaps and stops in the ladder to fit the gap size.
 
 <br/>
 
@@ -191,7 +200,7 @@ _Note: Popping to the front reduces the buffer by the newly added gap. If the bu
 
 # 4) Pop To Back
 
-The curved arrow button next to the closest stop will cancel that closest stop and create a new one a single gap size past the current furthest stop.
+The curved arrow button next to the closest stop will cancel that closest stop and create a new one with a single gap size past the current furthest stop.
 
 Use this as another way of increasing your risk exposure and "giving it room to breathe" as they say.
 
@@ -201,7 +210,7 @@ Use this as another way of increasing your risk exposure and "giving it room to 
 
 When we say we a ___inserting___ a stop into our ladder we want to think ___FIXED LADDER SIZE.___
 
-This means that the closet and furthest stops are still in the same trigger prices, but there is now one more stop between them then there was before. The middle stops are automatically redistributed according to the selected gap alogorithm.
+This means that the closest and furthest stops are still in the same trigger prices, but there is now one more stop between them than there was before. The middle stops are automatically redistributed according to the selected gap algorithm.
 
 ## Controls
 
@@ -225,7 +234,7 @@ _Note: If there are only two stops in the ladder, and thus no middle stops betwe
 
 # 7) Append
 
-Creates a new stop a single gap size past the current furthest stop.
+Creates a new stop with a single gap size past the current furthest stop.
 
 This preserves the current buffer size and the stops triggers of all existing stops. It simply adds a new stop, continuing the ladder.
 
@@ -251,7 +260,7 @@ Click the minus button next to the furthest stop.
 
 # 9) Cancel All
 
-Cancelling all stop orders for a given symbol is surprisingly very difficult on ThinkOrSwim and the Scwab.com website.
+Canceling all stop orders for a given symbol is surprisingly very difficult on ThinkOrSwim and the Scwab.com website.
 
 On our platform just click the "cancel all for this symbol" button and click "yes" on the confirmation popup.
 
@@ -260,12 +269,4 @@ Then all the stops in the ladder are cancelled in one shot.
 ### Controls 
 
 Click the "Cancel all stops" button.
-
-
-
-
-
-
-
-
 
